@@ -66,3 +66,12 @@ post '/event/create' do
   event = Event.create({start: start, duration: duration.to_i, body: body})
   redirect to("/event/#{event.id}")
 end
+
+#Prints routes
+
+Sinatra::Application.routes.each do |route|
+  puts "VERB: #{route[0]}"
+  route[1].each do |p|
+    puts "\tPATH: #{p[0]} Params: #{p[1]}"
+  end
+end
