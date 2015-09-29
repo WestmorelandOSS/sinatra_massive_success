@@ -1,0 +1,18 @@
+- if event
+  - id = event.id
+  - start = event.start.strftime("%Y-%m-%d")
+  - duration = event.duration
+  - body = event.body
+
+%input{type: "hidden", id: "id", name: "id", value: id}
+%p
+  %label{for: "start"} Start
+  %input{type: "date", id: "start", name:"start", value: start}
+%p
+  %label{for: "duration"} Duration
+  %input{type: "number", id: "duration", name: "duration", value: duration}
+%p
+  %label{for: "body"} Description
+  %textarea{id: "body", name: "body"}= body
+%p
+  %input{type: "submit", value: "submit"}
